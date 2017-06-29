@@ -1295,8 +1295,8 @@ function updatePositions() {
     newPosition.push((items[i].style.left = items[i].basicLeft + 100 * phase + 'px'));
   }
   // Looped over the items array.length to adjust the style.left to that of newPosition[i]
-  for (var i = 0; i < items.length; i++) {
-    items[i].style.left = newPosition[i];
+  for (var j = 0; j < items.length; j++) {
+    items[j].style.left = newPosition[j];
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
