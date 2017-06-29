@@ -8,7 +8,7 @@
 
   ```
   $ git clone https://github.com/ajames20/fend_optimize.git
-  cd into repo
+  cd into fend_optimize-master
   ```
 3. **Install Ngrok globally**
 
