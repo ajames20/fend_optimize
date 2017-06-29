@@ -36,6 +36,7 @@
   $ ngrok http 3000
   ```
   note: when you run ngrok you will be given a forwarding web address to use with page speed index website.
+  
   ![](src/img/screenshot.png)
 
   You can use the link provided with the [google page speed insight website](https://developers.google.com/speed/pagespeed/insights/)
