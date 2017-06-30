@@ -1218,6 +1218,7 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
+    // Added switch statement to handle sizing the pizzas by %
     var newWidth;
     switch (size) {
       case '1':
@@ -1234,7 +1235,7 @@ var resizePizzas = function(size) {
     }
 
     var randPizzas = document.querySelectorAll('.randomPizzaContainer');
-
+    // Used a forEach loop to  loop over all randPizzas and add newWidth in a percentage
     randPizzas.forEach(function(pizza) {
       pizza.style.width = newWidth + '%';
     });
@@ -1286,19 +1287,16 @@ function logAverageFrame(times) {
 function updatePositions() {
   window.frame++;
   window.performance.mark('mark_start_frame');
-
+  // Moved vars outside of loop so they are only created once
   var items = document.querySelectorAll('.mover');
-  // Added newPosition array to hold the value from the phase var
-  var newPosition = [];
+  var math = document.body.scrollTop / 1250;
 
   for (var i = 0; i < items.length; i++) {
-    var phase = Math.sin(document.body.scrollTop / 1250 + i % 5);
-    newPosition.push((items[i].style.left = items[i].basicLeft + 100 * phase + 'px'));
+    var phase = Math.sin(math + i % 5);
+    items[i].style.left = items[i].basicLeft + 50 * phase + 'px';
   }
-  // Looped over the items array.length to adjust the style.left to that of newPosition[i]
-  for (var j = 0; j < items.length; j++) {
-    items[j].style.left = newPosition[j];
-  }
+
+  // removed unnecessary second loop and unused var newPosition [] I created before
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
@@ -1317,10 +1315,9 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var s = 256;
   // Add dynamic col width and height based on available screen width and height
-  var cols = window.innerWidth / 145;
-  var rows = window.innerHeight / s;
+  var cols = window.innerWidth / 100; // innerWidth / 100 gave spacing a more random look
+  var rows = window.innerHeight / s; // innerHeight / s allows for nicely spaced cols of pizzas
   var pizzas = Math.ceil(cols * rows);
-  console.log(cols);
   // Declared variables outside of loop prevent them from being created every iteration
   var elem;
   var movingPizzas = document.querySelector('#movingPizzas1');
