@@ -65,3 +65,4 @@
 1. Added `window.frame++` to the `updatePositions` function.
 1. Added `newPostion` array to hold the calculations made.
 1. Looped over `items` array and adjusted the adjusted `items.style.left` to the new position at the `i-th` position form the the new position array.
+1. Added dynamic height and width to display background pizzas based on screen width and height
