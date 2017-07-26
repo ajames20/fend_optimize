@@ -10,13 +10,13 @@
   $ git clone https://github.com/ajames20/fend_optimize.git
   cd into fend_optimize-master
   ```
-3. **Install Ngrok globally**
+2. **Install Ngrok globally**
 
   ```
   $ npm install ngrok -g
   ```
 
-2. **Install dependencies**
+3. **Install dependencies**
 
   ```
   $ npm install or yarn
@@ -30,7 +30,7 @@
   note: the default gulp task is serving the web pages from the optimized build directory 'dist' (not from the 'src' directory').
 
 
-4. **Run ngrok**
+5. **Run ngrok**
 
   ```
   $ ngrok http 3000
